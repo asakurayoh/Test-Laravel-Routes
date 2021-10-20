@@ -32,11 +32,12 @@ Route::view('/about', 'pages.about')->name('about');
 
 // Task 4: redirect the GET URL "log-in" to a URL "login"
 // Put one code line here below
-
+Route::redirect('/log-in', '/login');
 
 // Task 5: group the following route sentences below in Route::group()
 // Assign middleware "auth"
 // Put one Route Group code line here below
+Route::group(['middleware'=>'auth'], function(){
 
     // Tasks inside that Authenticated group:
 
@@ -77,7 +78,7 @@ Route::view('/about', 'pages.about')->name('about');
 
 
     // End of the /admin Route Group
-
+});
 // End of the main Authenticated Route Group
 
 // One more task is in routes/api.php
